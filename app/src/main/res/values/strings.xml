@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Yoo</string>
     <string name="app_intro_was_skipped">App Intro was skipped</string>
+    <string name="get_free_recharge">Get Free Recharge</string>
+    <string name="enter_phone_number">Enter phone number</string>
+    <string name="enter_password">Enter password</string>
+    <string name="login">Login</string>
+    <string name="new_to_yoo_register">New to Yoo? Register!</string>
 </resources>
