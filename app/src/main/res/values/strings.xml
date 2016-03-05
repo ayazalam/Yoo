@@ -7,4 +7,9 @@
     <string name="login">Login</string>
     <string name="new_to_yoo_register">New to Yoo? Register!</string>
     <string name="register">Register</string>
+    <string name="continue_string">Continue</string>
+    <string name="check_internet_connection">Check your internet connection</string>
+    <string name="hide">hide</string>
+    <string name="invalid_mobile_number">Invalid mobile number</string>
+    <string name="please_wait_requesting_otp">Please wait. Requesting OTP</string>
 </resources>

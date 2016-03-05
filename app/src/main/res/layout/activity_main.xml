@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+    android:id="@+id/layoutForSnackbar"
     tools:context=".activity.MainActivity">
 
     <TextView
@@ -54,42 +54,17 @@
                 android:textColor="@color/iconColor"
                 android:textColorHint="@color/iconColor" />
         </TableRow>
-
-        <TableRow>
-
-            <ImageView
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/ic_password_key_white" />
-
-            <EditText
-                android:id="@+id/password_edit_text"
-                android:layout_width="match_parent"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"
-                android:hint="@string/enter_password"
-                android:inputType="textPassword"
-                android:textColor="@color/iconColor"
-                android:textColorHint="@color/iconColor" />
-        </TableRow>
     </TableLayout>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/continue_button"
         android:layout_below="@+id/login_layout"
         android:layout_centerHorizontal="true"
         android:background="@drawable/dark_primary_button"
-        android:text="@string/login"
+        android:text="@string/continue_string"
         android:layout_margin="5dp"
-        android:textColor="@color/iconColor" />
-
-    <TextView
-        style="@style/TextAppearance.AppCompat.Headline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"
-        android:text="@string/new_to_yoo_register"
+        android:padding="5dp"
         android:textColor="@color/iconColor" />
 </RelativeLayout>
