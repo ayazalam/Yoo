@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#549E5C</color>
     <color name="iconColor">#F3FAF4</color>
     <color name="colorAccent">#FA7470</color>
+    <color name="errorColor">#F44336</color>
 </resources>
