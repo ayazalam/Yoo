@@ -136,7 +136,7 @@ public class OtpVerificationActivity extends AppCompatActivity {
             if (current.getReturned()){ //OTP verified
                 Toast.makeText(getApplicationContext(),current.getMessage(),Toast.LENGTH_LONG).show();
                 //go to Home Activity
-                Util.goToHomeActivity(getApplication());
+                Util.goToHomeActivity(OtpVerificationActivity.this);
             }else{ //Otp not verified Some error
                 Util.redSnackbar(mLayoutForSnackbar,current.getMessage());
             }
