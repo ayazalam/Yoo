@@ -12,4 +12,15 @@
     <string name="hide">hide</string>
     <string name="invalid_mobile_number">Invalid mobile number</string>
     <string name="please_wait_requesting_otp">Please wait. Requesting OTP</string>
+    <string name="failed_to_parse_response">Failed to parse json response</string>
+    <string name="oops">OOPS!</string>
+    <string name="report_issue">Report issue</string>
+    <string name="try_again">Try again</string>
+    <string name="verify_otp">Verify OTP</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="otp_has_been_send_to">OTP has been send to</string>
+    <string name="verify">Verify</string>
+    <string name="inavlid_otp_code">Invalid OTP code</string>
+    <string name="failed_to_start_activity">Failed to start activity</string>
+    <string name="verifying_otp">Verifying OTP</string>
 </resources>
