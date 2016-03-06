@@ -48,11 +48,20 @@ public class MainActivity extends AppCompatActivity {
     private ProgressDialog pd;
     private String TAG = MainActivity.class.getSimpleName();
 
+    private MySharedPreferences mySharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        //Check user Login status
+        mySharedPreferences = MySharedPreferences.getInstance(getApplicationContext());
+
+        if (mySharedPreferences.getLoginStatus()){
+            Util.goToHomeActivity(this);
+        }
 
         //setup Progress dialog
         pd = new ProgressDialog(this);

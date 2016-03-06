@@ -3,8 +3,6 @@ package in.theyoo.yoo.storage;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import java.security.Key;
-
 /**
  * Created by husain on 3/4/2016.
  * Singleton class for SharedPreference
@@ -19,6 +17,8 @@ public class MySharedPreferences {
     //Shared Preferece key
     private static String KEY_PREFERENCE_NAME = "yoo_preference";
     public static String KEY_MAIN_APP_INTRO = "main_app_intro";
+    private static String KEY_USER_MOBILE = "user_mobile";
+    private static String KEY_DEFAULT = null;
 
     private MySharedPreferences(){
         mSharedPreference = mContext.getSharedPreferences(KEY_PREFERENCE_NAME,Context.MODE_PRIVATE);
@@ -46,4 +46,20 @@ public class MySharedPreferences {
         return mSharedPreference.getBoolean(keyname,false);
     }
 
+
+    //Method to store user Mobile number
+    public void setUserMobile(String mobile){
+        mSharedPreference.edit().putString(KEY_USER_MOBILE,mobile).apply();
+    }
+
+    //Method to get User mobile number
+    public String getUserMobile(){
+        return mSharedPreference.getString(KEY_USER_MOBILE, KEY_DEFAULT);
+    }
+
+    //Method to check user is logged in or not
+    public boolean getLoginStatus(){
+        //logged in
+        return mSharedPreference.getString(KEY_USER_MOBILE, KEY_DEFAULT) != null;
+    }
 }

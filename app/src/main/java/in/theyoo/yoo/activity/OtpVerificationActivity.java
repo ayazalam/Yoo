@@ -20,7 +20,6 @@ import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONException;
 
-import java.security.Key;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,6 +31,7 @@ import in.theyoo.yoo.extra.Keys;
 import in.theyoo.yoo.network.MyVolley;
 import in.theyoo.yoo.parser.JsonParser;
 import in.theyoo.yoo.pojo.SimplePojo;
+import in.theyoo.yoo.storage.MySharedPreferences;
 import in.theyoo.yoo.util.Util;
 
 public class OtpVerificationActivity extends AppCompatActivity {
@@ -47,15 +47,18 @@ public class OtpVerificationActivity extends AppCompatActivity {
     private RequestQueue mRequestQueue;
     private ProgressDialog pd;
 
+    private MySharedPreferences mySharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_otp_verification);
         ButterKnife.bind(this);
 
+        //SharedPrefernces
+        mySharedPreferences = MySharedPreferences.getInstance(getApplicationContext());
+
         mMobile = getIntent().getExtras().getString(Keys.KEY_COM_MOBILE);
-        Log.d(TAG, "HUS: number 3 "+getIntent().getExtras().getString(Keys.KEY_COM_MOBILE));
-        Log.d(TAG, "HUS: number 4 "+mMobile);
 
         //Instanciate Volley
         mRequestQueue = MyVolley.getInstance().getRequestQueue();
@@ -135,6 +138,9 @@ public class OtpVerificationActivity extends AppCompatActivity {
             SimplePojo current = JsonParser.SimpleParser(response);
             if (current.getReturned()){ //OTP verified
                 Toast.makeText(getApplicationContext(),current.getMessage(),Toast.LENGTH_LONG).show();
+                //Insert user details
+                mySharedPreferences.setUserMobile(mMobile);
+
                 //go to Home Activity
                 Util.goToHomeActivity(OtpVerificationActivity.this);
             }else{ //Otp not verified Some error
