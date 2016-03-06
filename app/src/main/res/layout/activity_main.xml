@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPrimary"
     tools:context=".activity.MainActivity">
 
@@ -28,9 +28,9 @@
         android:textSize="20sp" />
 
     <TableLayout
+        android:id="@+id/login_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/login_layout"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="30dp"
@@ -44,15 +44,15 @@
                 android:src="@drawable/ic_phone_white" />
 
             <EditText
+                android:id="@+id/phone_edit_text"
                 android:layout_width="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginStart="5dp"
-                android:inputType="phone"
-                android:id="@+id/phone_edit_text"
                 android:hint="@string/enter_phone_number"
+                android:inputType="phone"
                 android:maxLength="10"
-                android:textColorHint="@color/iconColor"
-                android:textColor="@color/iconColor"/>
+                android:textColor="@color/iconColor"
+                android:textColorHint="@color/iconColor" />
         </TableRow>
 
         <TableRow>
@@ -62,43 +62,34 @@
                 android:src="@drawable/ic_password_key_white" />
 
             <EditText
+                android:id="@+id/password_edit_text"
                 android:layout_width="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_marginStart="5dp"
-                android:inputType="textPassword"
-                android:id="@+id/password_edit_text"
                 android:hint="@string/enter_password"
-                android:textColorHint="@color/iconColor"
+                android:inputType="textPassword"
                 android:textColor="@color/iconColor"
-                />
+                android:textColorHint="@color/iconColor" />
         </TableRow>
     </TableLayout>
 
-    <com.andexert.library.RippleView
-        android:id="@+id/more"
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/login_layout"
-        android:layout_margin="5dp"
+        android:layout_below="@+id/login_layout"
         android:layout_centerHorizontal="true"
-        app:rv_centered="true">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/login"
-            android:background="@drawable/dark_primary_button"
-            android:textColor="@color/iconColor"/>
-
-    </com.andexert.library.RippleView>
+        android:background="@drawable/dark_primary_button"
+        android:text="@string/login"
+        android:layout_margin="5dp"
+        android:textColor="@color/iconColor" />
 
     <TextView
+        style="@style/TextAppearance.AppCompat.Headline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/new_to_yoo_register"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"
-        android:textColor="@color/iconColor"
-        style="@style/TextAppearance.AppCompat.Headline"/>
+        android:layout_marginBottom="15dp"
+        android:text="@string/new_to_yoo_register"
+        android:textColor="@color/iconColor" />
 </RelativeLayout>
